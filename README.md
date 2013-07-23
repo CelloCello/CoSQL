@@ -12,7 +12,7 @@ Features:
 1. easy to use and light
 2. high efficiency
 3. thread safe
-4. support sqlite¡Bmysql¡Bmssql ...
+4. support sqlite, mysql, mssql ...
 
 How to use
 ----------
@@ -28,7 +28,7 @@ import files:
 
 
 You can select `sqlobject` you like.	
-`SQLiteObject`¡B`MySQLObject`¡B`MsSQLObject`...	
+`SQLiteObject`, `MySQLObject`, `MsSQLObject`...	
 
 
 	from cosql.sqlobject import SQLiteObject
