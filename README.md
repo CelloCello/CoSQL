@@ -8,6 +8,7 @@ It helps you to manager the connection of SQL lib.
 You just connect once and reuse the DBCommand to do SQL things.
 
 Features:
+
 1. easy to use and light
 2. high efficiency
 3. thread safe
@@ -19,7 +20,7 @@ How to use
 here is an example of sqlite.	
 
 import files:
-::
+
 	from cosql.manager import DBManager
 	from cosql.connector import DBConnector
 	from cosql.command import DBCommand
@@ -28,12 +29,13 @@ import files:
 
 You can select 'sqlobject' you like.	
 SQLiteObject¡BMySQLObject¡BMsSQLObject...	
-::
+
+
 	from cosql.sqlobject import SQLiteObject
 
 
 Make your own 'DBCommand':
-::
+
 	class SQLiteCmd(DBCommand):
 	    @db_checker
 	    def select(self):
@@ -41,8 +43,8 @@ Make your own 'DBCommand':
 
 
 Declare 'DBConnector' and register connector into 'DBManager'.	
-Then 'start()' to start all connections.
-::
+Then 'start()' to start all connections.	
+
 	dbc_sqlite = DBConnector(host="test.db", maxline=1, sqltype=SQLiteObject, cmdtype=SQLiteCmd)
 
 	dbm = DBManager()
@@ -50,10 +52,10 @@ Then 'start()' to start all connections.
 	dbm.start()
 
 
-Get command object and do what you want to do!
+Get command object and do what you want to do!	
 Use 'getOne()' to get the data in the result list.	
-The column name will become the attribute of the return object automaticlly.
-::
+The column name will become the attribute of the return object automaticlly.	
+
 	cmd = dbm.getCommand("sqlite")
     rst = cmd.select().getOne(0)
     print rst.name
@@ -64,4 +66,5 @@ The column name will become the attribute of the return object automaticlly.
         print rst.getOne(0).name
 
 Bugs:
+
 - callproc() can't work in mssql
