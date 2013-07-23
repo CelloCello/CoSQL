@@ -1,0 +1,6 @@
+tags
+MANIFEST
+/dist
+/docs/_build
+*.pyc
+sqltest.py
